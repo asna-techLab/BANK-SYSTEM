@@ -79,17 +79,18 @@
 #-------practice Q4---------------
 
 #print all odd no. from 1 to 20
+
 # for i in range(1,20):
 #     if (i%2 != 0):
 #         print(i)
         
 
-#print the table of 57
+# #print the table of 57
 
 # for i in range(57,570,57):
 #     print(i)
     
-#print all multipls of 3 from 1-50 but skip 15
+# #print all multipls of 3 from 1-50 but skip 15
 
 # for i in range (1,50):
 #     if (i==15):
@@ -97,15 +98,33 @@
 #     if (i % 3==0):
 #         print(i)
         
-#take two  numbers a and b and print first number between 1 and 1000 that is divisible by both
+# #take two  numbers a and b and print first number between 1 and 1000 that is divisible by both
 
-a=int(input("enter 1st number:"))
-b=int(input("enter 2st number:"))
+# a=int(input("enter 1st number:"))
+# b=int(input("enter 2st number:"))
 
-for num in range (1,1001):
-    if num % a == 0 and num % b == 0:
-        print("First number:", num)
-        break
-    else:
-        print("no valid number")
-        break
+# for num in range (1,1001):
+#     if num % a == 0 and num % b == 0:
+#         print("First number:", num)
+#         break
+#     else:
+#         print("no valid number")
+#         break
+
+#-----------exercise 5-------------
+
+# list={101,105,101,108,105,104}
+# print(list)
+
+#------------function---------
+
+# def sum(a, b):
+#     print(a - b)
+
+# sum(10, 20)
+
+def cal_gst(price):
+    new_price=price + price * 0.18
+    print(new_price)
+    
+cal_gst(20)
