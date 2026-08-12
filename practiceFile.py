@@ -33,21 +33,79 @@
 
 #------- MINI CALCULATOR --------
 
-a=int(input("enter first digit:"))
-b=int(input("enter second digit:"))
-operator=input("enter operator:")
+# a=int(input("enter first digit:"))
+# b=int(input("enter second digit:"))
+# operator=input("enter operator:")
 
-if operator=='+':
-    print(a+b)
-elif operator=='-':
-    print(a-b)
-elif operator=='*':
-    print(a*b)
-elif operator=='/':
-    print(a/b)
-elif operator=='%':
-    print(a%b)
-elif operator=='**':
-    print(a**b)  
-else :
-    print("invalid opeartor")
+# if operator=='+':
+#     print(a+b)
+# elif operator=='-':
+#     print(a-b)
+# elif operator=='*':
+#     print(a*b)
+# elif operator=='/':
+#     print(a/b)
+# elif operator=='%':
+#     print(a%b)
+# elif operator=='**':
+#     print(a**b)  
+# else :
+#     print("invalid opeartor")
+
+#-------LOOPS-------
+
+# counter=1
+# while counter<=6:
+#     print("ASNA SAJID")
+#     counter += 1
+    
+# i=1
+# while i<=5:
+#     print(i * "*")
+#     i += 1
+
+#for loop
+
+# for i in range(2, 20, 2): #table of 2
+#     print(i)
+    
+# for i in range(1,50):
+#     if(i==21):
+#         break
+#     if(i%3 == 0):
+#         print(i)
+        
+        
+#-------practice Q4---------------
+
+#print all odd no. from 1 to 20
+# for i in range(1,20):
+#     if (i%2 != 0):
+#         print(i)
+        
+
+#print the table of 57
+
+# for i in range(57,570,57):
+#     print(i)
+    
+#print all multipls of 3 from 1-50 but skip 15
+
+# for i in range (1,50):
+#     if (i==15):
+#         continue
+#     if (i % 3==0):
+#         print(i)
+        
+#take two  numbers a and b and print first number between 1 and 1000 that is divisible by both
+
+a=int(input("enter 1st number:"))
+b=int(input("enter 2st number:"))
+
+for num in range (1,1001):
+    if num % a == 0 and num % b == 0:
+        print("First number:", num)
+        break
+    else:
+        print("no valid number")
+        break
