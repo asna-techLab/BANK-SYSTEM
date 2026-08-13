@@ -174,21 +174,61 @@
 
 #Static methids and INHERITANCE
 
-class car:
-    @staticmethod
-    def start():
-        print("car start...")
+# class car:
+#     @staticmethod
+#     def start():
+#         print("car start...")
         
-    @staticmethod
-    def stop():
-        print("car stop...")  
+#     @staticmethod
+#     def stop():
+#         print("car stop...")  
         
-class hondacity(car):     
-    def __init__(self, car_name):
-        self.car_name=car_name
+# class hondacity(car):     
+#     def __init__(self, car_name):
+#         self.car_name=car_name
 
-car1=hondacity("civic")
-car1.start()
-car1.stop()
+# car1=hondacity("civic")
+# car1.start()
+# car1.stop()
 
+#MULTIPLE INHERITANCE
+
+# class A:
+#     varA="Welcome to class a"
+# class B:
+#     varb="welcome to class b"
+# class C(A,B):
+#     varc="welcome to clas c"
     
+# c1=C() 
+# print(c1.varA)       
+# print(c1.varb)  
+# print(c1.varc)  
+
+# inheritance and super() practice questions 
+# create a employee class with att. role, department and salary, this class also has a show detail method.
+
+class employee:
+    def __init__(self, role, dept, salary):
+        self.role=role
+        self.dept=dept
+        self.salary=salary
+        
+    def show_details(self):
+        print("role=" , self.role)
+        print("dept=" , self.dept)
+        print("salary=" , self.salary)
+        
+
+#create an engineer class that inherits properties from eployes and add aditional info name and age.
+
+class engineer(employee):
+    def __init__(self, name, age):
+        self.name=name
+        self.age=age
+        super().__init__("developer", "CS", "40000")
+        
+
+
+eng1=engineer("asna", "20")
+eng1.show_details()
