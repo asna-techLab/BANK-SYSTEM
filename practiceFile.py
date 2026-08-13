@@ -131,12 +131,26 @@
 
 #--------------OOPS IN PYTHON---------------
 
+# class Student:
+#     name="asna sajid"
+#     age=20
+    
+    
+# s1=Student() #OBJECT
+# print(s1.name)
+# print(s1.age)
+    
+    
 class Student:
-    name="asna sajid"
-    age=20
+    def __init__(self,name,marks):
+        self.name=name
+        self.marks=marks
+       
+        
+s1=Student("asna", 20)
+print(s1.name,s1.marks)
+
+s2=Student("sajid",40)
+print(s2.name,s2.marks)        
     
-    
-s1=Student()
-print(s1.name)
-print(s1.age)
     
