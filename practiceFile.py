@@ -158,16 +158,37 @@
 # CREATE a class that takes name and marks of three subjects as arguments in constuctor.
 #then create a method to print average
 
-class Subjects:
-    def __init__(self,sub_name,marks):
-        self.name=sub_name
-        self.marks=marks
+# class Subjects:
+#     def __init__(self,sub_name,marks):
+#         self.name=sub_name
+#         self.marks=marks
         
-    def avg(self):
-            sum=0
-            for val in self.marks:
-                sum+=val
-            print("hi", self.name,"your avaerage marks are",sum/3)
+#     def avg(self):
+#             sum=0
+#             for val in self.marks:
+#                 sum+=val
+#             print("hi", self.name,"your avaerage marks are",sum/3)
         
-s1=Subjects("Asna", [99,87,78])
-print(s1.avg())
+# s1=Subjects("Asna", [99,87,78])
+# print(s1.avg())
+
+#Static methids and INHERITANCE
+
+class car:
+    @staticmethod
+    def start():
+        print("car start...")
+        
+    @staticmethod
+    def stop():
+        print("car stop...")  
+        
+class hondacity(car):     
+    def __init__(self, car_name):
+        self.car_name=car_name
+
+car1=hondacity("civic")
+car1.start()
+car1.stop()
+
+    
