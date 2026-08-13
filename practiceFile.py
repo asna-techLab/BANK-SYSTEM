@@ -232,3 +232,4 @@ class engineer(employee):
 
 eng1=engineer("asna", "20")
 eng1.show_details()
+print(eng1.name,eng1.age)
