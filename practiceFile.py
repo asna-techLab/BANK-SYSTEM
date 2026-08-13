@@ -123,8 +123,20 @@
 
 # sum(10, 20)
 
-def cal_gst(price):
-    new_price=price + price * 0.18
-    print(new_price)
+# def cal_gst(price):
+#     new_price=price + price * 0.18
+#     print(new_price)
     
-cal_gst(20)
+# cal_gst(20)
+
+#--------------OOPS IN PYTHON---------------
+
+class Student:
+    name="asna sajid"
+    age=20
+    
+    
+s1=Student()
+print(s1.name)
+print(s1.age)
+    
