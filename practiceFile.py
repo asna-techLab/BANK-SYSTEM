@@ -140,17 +140,34 @@
 # print(s1.name)
 # print(s1.age)
     
-    
-class Student:
-    def __init__(self,name,marks):
-        self.name=name
-        self.marks=marks
+    #--------PARAMETERIZED CONSTUCTOR---------
+# class Student:
+#     def __init__(self,name,marks):
+#         self.name=name
+#         self.marks=marks
        
         
-s1=Student("asna", 20)
-print(s1.name,s1.marks)
+# s1=Student("asna", 20)
+# print(s1.name,s1.marks)
 
-s2=Student("sajid",40)
-print(s2.name,s2.marks)        
-    
-    
+# s2=Student("sajid",40)
+# print(s2.name,s2.marks)        
+
+#---METHODSS------
+
+# CREATE a class that takes name and marks of three subjects as arguments in constuctor.
+#then create a method to print average
+
+class Subjects:
+    def __init__(self,sub_name,marks):
+        self.name=sub_name
+        self.marks=marks
+        
+    def avg(self):
+            sum=0
+            for val in self.marks:
+                sum+=val
+            print("hi", self.name,"your avaerage marks are",sum/3)
+        
+s1=Subjects("Asna", [99,87,78])
+print(s1.avg())
