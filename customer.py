@@ -4,6 +4,12 @@ class customer:
         self.name=name
         self.password=password
         
-    def customer_details(self):
-        super().__init__
+    def print_details(self):
+        print("------CUSTOMER DETAILS---------")
+        print("Customer ID=", self.customer_id)
+        print("Name=", self.name)
+        
+    def check_password(self, password):
+        return self.password == password
+        
     
