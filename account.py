@@ -1,8 +1,8 @@
 class BankAccount:
-    def __init__(self, acc_id, balance, acc_type,customer_id):
-        self.acc_id=acc_id
-        self.balance=balance
-        self.acc_type=acc_type
+    def __init__(self, account_id, balance, account_type,customer_id):
+        self.account_id=account_id
+        self.balance=float(balance)
+        self.account_type=account_type
         self.customer_id=customer_id
         
     def cheak_balance(self):
@@ -41,9 +41,7 @@ class BankAccount:
     def __eq__(self, other):
         return self.balance == other.balance
     
-acc1 = BankAccount("001", 50000, "current", 21)
-acc2 = BankAccount("002", 67000, "current", 14)
-print(acc1>acc2)
+
     
 
 
