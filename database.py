@@ -3,7 +3,7 @@ import psycopg
 
 def get_connection():
     return psycopg.connect(
-        host="localhost",
+        host="localhost", 
         dbname="bank_system",
         user="postgres",
         password="12345678",
@@ -144,3 +144,53 @@ def change_password(customer_id, new_password):
 
     cursor.close()
     connection.close()
+    
+def create_account(name, password, balance, account_type):
+
+    connection = get_connection()
+    cursor = connection.cursor()
+
+    try:
+
+        # Insert customer
+        cursor.execute(
+            """
+            INSERT INTO customers (name, password)
+            VALUES (%s, %s)
+            RETURNING customer_id
+            """,
+            (name, password)
+        )
+
+        customer_id = cursor.fetchone()[0]
+
+        # Insert account
+        cursor.execute(
+            """
+            INSERT INTO accounts
+            (customer_id, balance, account_type)
+            VALUES (%s, %s, %s)
+            RETURNING account_id
+            """,
+            (customer_id, balance, account_type)
+        )
+
+        account_id = cursor.fetchone()[0]
+
+        # Save both changes
+        connection.commit()
+
+        print("\nAccount created successfully!")
+        print("Customer ID:", customer_id)
+        print("Account ID:", account_id)
+
+    except Exception as e:
+
+        connection.rollback()
+
+        print("\nError creating account:", e)
+
+    finally:
+
+        cursor.close()
+        connection.close()

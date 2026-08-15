@@ -5,7 +5,7 @@ class BankAccount:
         self.account_type=account_type
         self.customer_id=customer_id
         
-    def cheak_balance(self):
+    def check_balance(self):
         print("\nCurrent Balance:", self.balance)
         
     def show_account_type(self):
@@ -14,23 +14,28 @@ class BankAccount:
     def deposit(self, amount):
         if amount <= 0:
             print("invalid amount.")
-            return
+            return False
+        
         self.balance += amount
         print("Deposit successful.")
         print("New balance:", self.balance)
+        return True
+        
     
     def withdraw(self, amount):
 
         if amount <= 0:
             print("Invalid amount.")
+            return False
 
         elif amount > self.balance:
             print("Insufficient balance.")
-
+            return False
         else:
             self.balance -= amount
         print("Withdrawal successful.")
         print("Remaining balance:", self.balance)
+        return True
     
     def __gt__(self, other):
         return self.balance > other.balance

@@ -4,11 +4,58 @@ from database import (
     get_account_by_id,
     update_balance,
     transfer_money,
-    change_password
+    change_password,
+    create_account
 )
 
 from customer import Customer
 from account import BankAccount
+
+def register():
+
+    print("\n==============================")
+    print("       CREATE ACCOUNT")
+    print("==============================")
+
+    name = input("Enter your name: ")
+    password = input("Enter your password: ")
+
+    print("\nSelect Account Type:")
+    print("1. Saving")
+    print("2. Current")
+
+    account_choice = input("Enter your choice: ")
+
+    if account_choice == "1":
+        account_type = "Saving"
+
+    elif account_choice == "2":
+        account_type = "Current"
+
+    else:
+        print("Invalid account type.")
+        return
+
+    try:
+
+        balance = float(
+            input("Enter initial deposit: ")
+        )
+
+        if balance < 0:
+            print("Balance cannot be negative.")
+            return
+
+        create_account(
+            name,
+            password,
+            balance,
+            account_type
+        )
+
+    except ValueError:
+
+        print("Please enter a valid amount.")
 
 
 def login():
@@ -46,9 +93,9 @@ def login():
     # Create BankAccount object
     account = BankAccount(
         account_data[0],
-        account_data[1],
         account_data[2],
-        account_data[3]
+        account_data[3],
+        account_data[1]
     )
 
     return customer, account
@@ -264,9 +311,9 @@ def bank_menu(customer, account):
 
                 other_account = BankAccount(
                     other_data[0],
-                    other_data[1],
                     other_data[2],
-                    other_data[3]
+                    other_data[3],
+                    other_data[1]
                 )
 
                 if account > other_account:
@@ -348,13 +395,41 @@ def bank_menu(customer, account):
 # PROGRAM STARTS HERE
 # ==========================================
 
-customer, account = login()
+while True:
 
-if customer is not None and account is not None:
+    print("\n================================")
+    print("          BANK SYSTEM")
+    print("================================")
 
-    bank_menu(customer, account)
+    print("1. Login")
+    print("2. Create Account")
+    print("3. Exit")
 
-else:
+    print("================================")
 
-    print("\nProgram ended.")
-    
+    choice = input("Enter your choice: ")
+
+    if choice == "1":
+
+        customer, account = login()
+
+        if customer is not None and account is not None:
+
+            bank_menu(customer, account)
+
+
+    elif choice == "2":
+
+        register()
+
+
+    elif choice == "3":
+
+        print("\nThank you for using Bank System!")
+
+        break
+
+
+    else:
+
+        print("\nInvalid choice. Please select 1-3.")
