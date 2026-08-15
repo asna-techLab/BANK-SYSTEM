@@ -208,28 +208,40 @@
 # inheritance and super() practice questions 
 # create a employee class with att. role, department and salary, this class also has a show detail method.
 
-class employee:
-    def __init__(self, role, dept, salary):
-        self.role=role
-        self.dept=dept
-        self.salary=salary
+# class employee:
+#     def __init__(self, role, dept, salary):
+#         self.role=role
+#         self.dept=dept
+#         self.salary=salary
         
-    def show_details(self):
-        print("role=" , self.role)
-        print("dept=" , self.dept)
-        print("salary=" , self.salary)
-        
-
-#create an engineer class that inherits properties from eployes and add aditional info name and age.
-
-class engineer(employee):
-    def __init__(self, name, age):
-        self.name=name
-        self.age=age
-        super().__init__("developer", "CS", "40000")
+#     def show_details(self):
+#         print("role=" , self.role)
+#         print("dept=" , self.dept)
+#         print("salary=" , self.salary)
         
 
+# #create an engineer class that inherits properties from eployes and add aditional info name and age.
 
-eng1=engineer("asna", "20")
-eng1.show_details()
-print(eng1.name,eng1.age)
+# class engineer(employee):
+#     def __init__(self, name, age):
+#         self.name=name
+#         self.age=age
+#         super().__init__("developer", "CS", "40000")
+        
+
+
+# eng1=engineer("asna", "20")
+# eng1.show_details()
+# print(eng1.name,eng1.age)
+
+#-----encapsulation-------
+
+class Account:
+    def __init__(self, balance):
+        self.__balance=balance
+        
+    def get_balance(self):
+        return self.__balance
+    
+acc1=Account(5000)
+print(acc1.get_balance())
