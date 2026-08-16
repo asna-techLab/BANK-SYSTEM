@@ -236,12 +236,30 @@
 
 #-----encapsulation-------
 
-class Account:
-    def __init__(self, balance):
-        self.__balance=balance
+# class Account:
+#     def __init__(self, balance):
+#         self.__balance=balance
         
-    def get_balance(self):
-        return self.__balance
+#     def get_balance(self):
+#         return self.__balance
     
-acc1=Account(5000)
-print(acc1.get_balance())
+# acc1=Account(5000)
+# print(acc1.get_balance())
+
+#-----------------COMPOSITION (HAS-A)---------------------
+
+class customer:
+    def __init__(self, name):
+        self.name = name
+
+
+class BankAccount:
+    def __init__(self, account_number, customer):
+        self.account_number = account_number
+        self.customer = customer
+        
+customer1=customer("asna")
+account1=BankAccount("123",customer1)
+
+print(account1.account_number)
+print(account1.customer.name)
