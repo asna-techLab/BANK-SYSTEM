@@ -10,6 +10,6 @@ class Customer:
         print("Name=", self.name)
         
     def check_password(self, password):
-        return self.password == password
+        return self.password == password 
         
     

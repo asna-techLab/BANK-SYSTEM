@@ -30,7 +30,7 @@ def get_customer(name, password):
     cursor.close()
     connection.close()
 
-    return customer
+    return customer 
 
 
 def get_account(customer_id):
